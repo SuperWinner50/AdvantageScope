@@ -142,3 +142,34 @@ div.points-background svg {
   position: absolute;
   stroke-width: 5px;
 }
+
+div.strip-background-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  left: 0px;
+  width: 100%;
+  overflow: hidden;
+}
+
+div.strip-background {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: #f4f4f4;
+  border: 1px solid #555;
+}
+
+@media (prefers-color-scheme: dark) {
+  div.strip-background {
+    background-color: #292929;
+    border: 1px solid #999;
+  }
+}
+
+div.strip-background svg {
+  position: absolute;
+  stroke-width: 5px;
+}

@@ -13,6 +13,7 @@ import MetadataController from "./tabControllers/MetadataController";
 import OdometryController from "./tabControllers/OdometryController";
 import PointsController from "./tabControllers/PointsController";
 import StatisticsController from "./tabControllers/StatisticsController";
+import StripController from "./tabControllers/StripController";
 import SwerveController from "./tabControllers/SwerveController";
 import TableController from "./tabControllers/TableController";
 import ThreeDimensionController from "./tabControllers/ThreeDimensionController";
@@ -246,8 +247,13 @@ export default class Tabs {
         controller = new PointsController(contentElement);
         break;
       case TabType.Metadata:
-        contentElement = this.CONTENT_TEMPLATES.children[13].cloneNode(true) as HTMLElement;
+        contentElement = this.CONTENT_TEMPLATES.children[14].cloneNode(true) as HTMLElement;
         controller = new MetadataController(contentElement);
+        break;
+      case TabType.Strip:
+        contentElement = this.CONTENT_TEMPLATES.children[5].cloneNode(true) as HTMLElement;
+        contentElement.appendChild(this.CONTENT_TEMPLATES.children[13].cloneNode(true));
+        controller = new StripController(contentElement);
         break;
     }
 

@@ -7,6 +7,7 @@ import JoysticksVisualizer from "./shared/visualizers/JoysticksVisualizer";
 import MechanismVisualizer from "./shared/visualizers/MechanismVisualizer";
 import OdometryVisualizer from "./shared/visualizers/OdometryVisualizer";
 import PointsVisualizer from "./shared/visualizers/PointsVisualizer";
+import StripVisualizer from "./shared/visualizers/StripVisualizer";
 import SwerveVisualizer from "./shared/visualizers/SwerveVisualizer";
 import ThreeDimensionVisualizer from "./shared/visualizers/ThreeDimensionVisualizer";
 import VideoVisualizer from "./shared/visualizers/VideoVisualizer";
@@ -61,6 +62,7 @@ window.addEventListener("message", (event) => {
           (document.getElementById("swerve") as HTMLElement).hidden = type != TabType.Swerve;
           (document.getElementById("mechanism") as HTMLElement).hidden = type != TabType.Mechanism;
           (document.getElementById("points") as HTMLElement).hidden = type != TabType.Points;
+          (document.getElementById("strip") as HTMLElement).hidden = type != TabType.Strip;
 
           // Create visualizer
           switch (type) {
@@ -93,6 +95,11 @@ window.addEventListener("message", (event) => {
             case TabType.Points:
               visualizer = new PointsVisualizer(
                 document.getElementsByClassName("points-background-container")[0] as HTMLElement
+              );
+              break;
+            case TabType.Strip:
+              visualizer = new StripVisualizer(
+                document.getElementsByClassName("strip-background-container")[0] as HTMLElement
               );
               break;
           }

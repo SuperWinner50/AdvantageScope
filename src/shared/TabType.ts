@@ -11,7 +11,8 @@ enum TabType {
   Swerve,
   Mechanism,
   Points,
-  Metadata
+  Metadata,
+  Strip
 }
 
 export default TabType;
@@ -23,7 +24,8 @@ export const TIMELINE_VIZ_TYPES: TabType[] = [
   TabType.Points,
   TabType.Joysticks,
   TabType.Swerve,
-  TabType.Mechanism
+  TabType.Mechanism,
+  TabType.Strip
 ];
 
 export function getAllTabTypes(): TabType[] {
@@ -58,6 +60,8 @@ export function getDefaultTabTitle(type: TabType): string {
       return "Points";
     case TabType.Metadata:
       return "Metadata";
+    case TabType.Strip:
+      return "Strip";
     default:
       return "";
   }
@@ -91,6 +95,8 @@ export function getTabIcon(type: TabType): string {
       return "🔵";
     case TabType.Metadata:
       return "🔍";
+    case TabType.Strip:
+      return "💡";
     default:
       return "";
   }
